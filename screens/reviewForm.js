@@ -42,6 +42,7 @@ export default function RevireForm({ addReview }) {
 
             <TextInput
               multiline
+              minHeight={60}
               style={globalStyles.input}
               placeholder="Review body"
               onChangeText={props.handleChange("body")}
