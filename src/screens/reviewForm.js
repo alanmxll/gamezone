@@ -1,6 +1,6 @@
 import React from "react";
 import { TextInput, View, Text } from "react-native";
-import { globalStyles } from "../../styles/global";
+import { globalStyles } from "../styles/global";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Button from "../components/Button";

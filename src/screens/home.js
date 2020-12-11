@@ -9,7 +9,7 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { globalStyles } from "../../styles/global";
+import { globalStyles } from "../styles/global";
 import { MaterialIcons } from "@expo/vector-icons";
 import ReviewForm from "./reviewForm";
 
