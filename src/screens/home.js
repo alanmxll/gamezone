@@ -9,10 +9,11 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { globalStyles } from "../styles/global";
-import Card from "../shared/card";
+import { globalStyles } from "../../styles/global";
 import { MaterialIcons } from "@expo/vector-icons";
 import ReviewForm from "./reviewForm";
+
+import Card from "../components/Card";
 
 export default function Home({ navigation }) {
   const [modalOpen, setModalOpen] = useState(false);

@@ -1,8 +1,8 @@
 import React from "react";
 import { createStackNavigator } from "react-navigation-stack";
 import Home from "../screens/home";
-import Header from "../shared/header";
 import ReviewDetails from "../screens/reviewDetails";
+import Header from "../components/Header";
 
 const screens = {
   Home: {
