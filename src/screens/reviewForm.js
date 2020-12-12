@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Text } from "react-native";
+
+import CustomButton from "../components/Button";
+import { WrapperGlobal, Input, ErrorText } from "../styles/global";
+
 import { Formik } from "formik";
 import * as yup from "yup";
-import Button from "../components/Button";
-
-import { WrapperGlobal, Input, ErrorText } from "../styles/global";
 
 const reviewSchema = yup.object({
   title: yup.string().required().min(4),
@@ -29,7 +29,7 @@ export default function RevireForm({ addReview }) {
         }}
       >
         {(props) => (
-          <View>
+          <>
             <Input
               placeholder="Review title"
               onChangeText={props.handleChange("title")}
@@ -57,8 +57,8 @@ export default function RevireForm({ addReview }) {
             />
             <ErrorText>{props.touched.rating && props.errors.rating}</ErrorText>
 
-            <Button text="submit" onPress={props.handleSubmit} />
-          </View>
+            <CustomButton text="submit" onPress={props.handleSubmit} />
+          </>
         )}
       </Formik>
     </WrapperGlobal>
