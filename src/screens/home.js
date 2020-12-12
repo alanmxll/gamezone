@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import {
   View,
-  Text,
   FlatList,
   TouchableOpacity,
   Modal,
@@ -9,10 +8,11 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
 } from "react-native";
-import { globalStyles } from "../styles/global";
+
+import { WrapperGlobal, TextTitle } from "../styles/global";
+
 import { MaterialIcons } from "@expo/vector-icons";
 import ReviewForm from "./reviewForm";
-
 import Card from "../components/Card";
 
 export default function Home({ navigation }) {
@@ -43,7 +43,7 @@ export default function Home({ navigation }) {
   };
 
   return (
-    <View style={globalStyles.container}>
+    <WrapperGlobal>
       <Modal visible={modalOpen} animationType="slide">
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalContent}>
@@ -73,12 +73,12 @@ export default function Home({ navigation }) {
             onPress={() => navigation.navigate("ReviewDetails", item)}
           >
             <Card>
-              <Text style={globalStyles.titleText}>{item.title}</Text>
+              <TextTitle>{item.title}</TextTitle>
             </Card>
           </TouchableOpacity>
         )}
       />
-    </View>
+    </WrapperGlobal>
   );
 }
 

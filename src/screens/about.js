@@ -1,11 +1,12 @@
 import React from "react";
-import { View, Text } from "react-native";
-import { globalStyles } from "../styles/global";
+import { Text } from "react-native";
+
+import { WrapperGlobal } from "../styles/global";
 
 export default function About() {
   return (
-    <View style={globalStyles.container}>
+    <WrapperGlobal>
       <Text>About Screen</Text>
-    </View>
+    </WrapperGlobal>
   );
 }

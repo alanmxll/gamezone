@@ -1,6 +1,8 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import { globalStyles, images } from "../styles/global";
+import { images } from "../styles/global";
+
+import { WrapperGlobal } from "../styles/global";
 
 import Card from "../components/Card";
 
@@ -8,7 +10,7 @@ export default function ReviewDetails({ navigation }) {
   const rating = navigation.getParam("rating");
 
   return (
-    <View style={globalStyles.container}>
+    <WrapperGlobal>
       <Card>
         <Text>{navigation.getParam("title")}</Text>
         <Text>{navigation.getParam("body")}</Text>
@@ -17,7 +19,7 @@ export default function ReviewDetails({ navigation }) {
           <Image source={images.ratings[rating]} />
         </View>
       </Card>
-    </View>
+    </WrapperGlobal>
   );
 }
 

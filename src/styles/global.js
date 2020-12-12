@@ -1,34 +1,31 @@
-import { StyleSheet } from "react-native";
+import styled from "styled-components/native";
 
-export const globalStyles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-  },
-  titleText: {
-    fontFamily: "nunito-bold",
-    fontSize: 18,
-    color: "#333",
-  },
-  paragraph: {
-    marginVertical: 8,
-    lineHeight: 20,
-  },
-  input: {
-    fontSize: 18,
-    borderWidth: 1,
-    borderColor: "#DDD",
-    borderRadius: 6,
-    padding: 10,
-  },
-  errorText: {
-    color: "crimson",
-    fontWeight: "bold",
-    marginBottom: 10,
-    marginTop: 6,
-    textAlign: "center",
-  },
-});
+export const WrapperGlobal = styled.View`
+  flex: 1;
+  padding: 20px;
+`;
+
+export const TextTitle = styled.Text`
+  font-family: nunito-bold;
+  font-size: 18px;
+  color: #333;
+`;
+
+export const Input = styled.TextInput`
+  font-size: 18px;
+  border-width: 1px;
+  border-color: #ddd;
+  border-radius: 6px;
+  padding: 10px;
+`;
+
+export const ErrorText = styled.Text`
+  color: crimson;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 6px;
+  text-align: center;
+`;
 
 export const images = {
   ratings: {

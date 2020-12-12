@@ -1,9 +1,10 @@
 import React from "react";
-import { TextInput, View, Text } from "react-native";
-import { globalStyles } from "../styles/global";
+import { View, Text } from "react-native";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Button from "../components/Button";
+
+import { WrapperGlobal, Input, ErrorText } from "../styles/global";
 
 const reviewSchema = yup.object({
   title: yup.string().required().min(4),
@@ -18,7 +19,7 @@ const reviewSchema = yup.object({
 
 export default function RevireForm({ addReview }) {
   return (
-    <View style={globalStyles.container}>
+    <WrapperGlobal>
       <Formik
         initialValues={{ title: "", body: "", rating: "" }}
         validationSchema={reviewSchema}
@@ -29,46 +30,37 @@ export default function RevireForm({ addReview }) {
       >
         {(props) => (
           <View>
-            <TextInput
-              style={globalStyles.input}
+            <Input
               placeholder="Review title"
               onChangeText={props.handleChange("title")}
               value={props.values.title}
               onBlur={props.handleBlur("title")}
             />
-            <Text style={globalStyles.errorText}>
-              {props.touched.title && props.errors.title}
-            </Text>
+            <ErrorText>{props.touched.title && props.errors.title}</ErrorText>
 
-            <TextInput
+            <Input
               multiline
               minHeight={60}
-              style={globalStyles.input}
               placeholder="Review body"
               onChangeText={props.handleChange("body")}
               value={props.values.body}
               onBlur={props.handleBlur("body")}
             />
-            <Text style={globalStyles.errorText}>
-              {props.touched.body && props.errors.body}
-            </Text>
+            <ErrorText>{props.touched.body && props.errors.body}</ErrorText>
 
-            <TextInput
-              style={globalStyles.input}
+            <Input
               placeholder="Rating (1-5)"
               onChangeText={props.handleChange("rating")}
               value={props.values.rating}
               onBlur={props.handleBlur("rating")}
               keyboardType="numeric"
             />
-            <Text style={globalStyles.errorText}>
-              {props.touched.rating && props.errors.rating}
-            </Text>
+            <ErrorText>{props.touched.rating && props.errors.rating}</ErrorText>
 
             <Button text="submit" onPress={props.handleSubmit} />
           </View>
         )}
       </Formik>
-    </View>
+    </WrapperGlobal>
   );
 }
